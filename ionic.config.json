@@ -1,0 +1,7 @@
+{
+  "name": "ionic-auto-complete",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
