@@ -1,0 +1,81 @@
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+
+import {SegmentModel} from '../../models/segment.model';
+
+@Component({
+  selector:    'home-page',
+  templateUrl: 'home.page.html',
+  styleUrls: [
+    'home.page.scss'
+  ],
+  standalone: false
+})
+export class HomePage implements OnInit {
+  public segments:SegmentModel[] = [
+    {
+      key:   'simple-service',
+      label: 'Basic'
+    },
+    {
+      key:   'ingredients',
+      label: 'Ingredients'
+    },
+    {
+      key:   'team-picker',
+      label: 'Pick Teams'
+    },
+    {
+      key:   'country-picker',
+      label: 'Pick Countries'
+    }
+  ];
+
+  public selectedSegment:string = this.segments[0].key;
+
+  constructor(
+      private route:ActivatedRoute,
+      private router:Router
+  ) {
+
+  }
+
+  ngOnInit():void {
+    this.route.fragment.subscribe(
+        (fragment) => {
+          this.setSegment(fragment as any);
+        }
+    );
+  }
+
+  onClickSegment(event:CustomEvent):void {
+    if (event.detail && typeof event.detail.value === 'string') {
+      const segment = event.detail.value;
+
+      this.setSegment(segment);
+    }
+  }
+
+  setSegment(segment:string):void {
+    if (typeof segment === 'string') {
+      segment = segment.toLowerCase();
+
+      const arrayHas = this.segments.some(
+        (candidate) => {
+          return candidate.key === segment;
+        }
+      );
+
+      if (arrayHas) {
+        this.selectedSegment = segment;
+
+        this.router.navigate(
+           [],
+           {
+             fragment: segment
+           }
+        ).then();
+      }
+    }
+  }
+}
