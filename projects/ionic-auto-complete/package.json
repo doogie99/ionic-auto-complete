@@ -1,9 +1,28 @@
 {
   "name": "ionic-auto-complete",
-  "version": "4.0.0",
+  "version": "4.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jrquick17/ionic4-auto-complete"
+  },
+  "author": {
+    "name": "Jeremy Quick",
+    "email": "me@jrquick.com",
+    "url": "https://jrquick.com"
+  },
+  "keywords": [
+    "angular",
+    "autocomplete",
+    "ionic"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jrquick17/ionic4-auto-complete/issues"
+  },
   "peerDependencies": {
-    "@angular/common": "^17.3.12",
-    "@angular/core": "^17.3.12",
+    "@angular/common": "^18.2.13",
+    "@angular/core": "^18.2.13",
+    "@angular/forms": "^18.2.13",
     "@ionic/angular": "^8.4.1"
   },
   "dependencies": {

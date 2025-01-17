@@ -1,8 +1,24 @@
 {
   "name": "ionic-auto-complete",
-  "version": "4.0.0",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "version": "4.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jrquick17/ionic4-auto-complete"
+  },
+  "author": {
+    "name": "Jeremy Quick",
+    "email": "me@jrquick.com",
+    "url": "https://jrquick.com"
+  },
+  "keywords": [
+    "angular",
+    "autocomplete",
+    "ionic"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jrquick17/ionic4-auto-complete/issues"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
